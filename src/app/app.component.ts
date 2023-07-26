@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import * as moment from 'moment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'AngularCustomWebpackConfig';
-}
+export class AppComponent implements OnInit {
+  currentTimeFRLocale: string;
+
+  ngOnInit(): void {
+    moment.locale('fr');
+    this.currentTimeFRLocale = moment().format('LLL');
+  }}
