@@ -1,6 +1,8 @@
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const {sentryWebpackPlugin} = require('@sentry/webpack-plugin');
 module.exports = {
+
+  devtool:"source-map",
   plugins: [
     new MomentLocalesPlugin({
       localesToKeep: ['fr']
